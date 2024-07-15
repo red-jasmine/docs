@@ -1,0 +1,16 @@
+@startuml
+
+package  商品领域{
+
+    class SKU{
+
+    }
+    class 商品基本{
+
+    }
+
+
+
+}
+
+@enduml
