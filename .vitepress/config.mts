@@ -51,7 +51,13 @@ export default defineConfig({
                             {text: '评价', link: '/products/comment/'},
                         ]
                     },
-                    {text: '订单', link: '/orders/'},
+                    {
+                        text: '订单', link: '/orders/',
+                        items: [
+                            {text: '订单', link: '/orders/order/'},
+                            {text: '售后', link: '/orders/refund/'},
+                        ]
+                    },
                     {text: '支付', link: '/payment'},
                     {text: '用户', link: '/user'},
                     {text: '地址', link: '/address'},
