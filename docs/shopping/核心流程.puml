@@ -1,0 +1,67 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor 买家
+
+participant 下单核心
+
+participant 购物车
+
+participant 商品
+
+participant 库存
+
+participant 营销中心
+
+participant 地址库
+
+participant 物流
+
+participant 订单
+
+participant 卡密仓库
+
+
+买家 --> 下单核心: 商品下单
+
+下单核心 -> 商品: 查询商品信息
+
+商品 --> 下单核心: 返回商品信息
+
+下单核心 -> 下单核心: 拆分订单
+
+下单核心 -> 营销中心: 获取优惠信息
+
+营销中心 --> 下单核心: 返回优惠信息
+
+下单核心 --> 下单核心: 计算订单金额
+
+下单核心 -> 物流 : 计算邮费
+
+物流 --> 下单核心: 返回订单邮费
+
+
+
+|||
+
+
+下单核心-> 订单: 生成订单
+
+下单核心-> 库存: 减库存
+
+下单核心-> 营销中心: 核销优惠券
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml
