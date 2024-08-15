@@ -61,6 +61,12 @@ export default defineConfig({
                     {text: '支付', link: '/payment'},
                     {text: '用户', link: '/user'},
                     {text: '地址', link: '/address'},
+                    {
+                        text: '购买', link: '/shopping/',
+                        items: [
+                            {text: '订单', link: '/shopping/'},
+                        ]
+                    },
                     {text: '客户', link: '/customer'},
                     {text: '账户', link: '/account'},
                     {text: '卡密仓库', link: '/card-key'},
