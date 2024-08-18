@@ -1,7 +1,44 @@
 ---
 outline: deep
 ---
-# 购买下单
+# 下单核心服务
+
+## 依赖组件
+
+```plantuml
+
+@startuml
+
+component 下单核心 {
+  component 商品领域
+  component 订单核心域
+  component 营销领域
+  component 物流服务
+  component 卡密领域
+  component 基础服务{
+  component 国家
+  component 地址
+  component 货币
+  component 语言
+  
+  }
+}
+
+
+@enduml
+
+
+```
+
+- 商品领域
+- 物流领域
+- 订单领域
+- 营销领域
+- 基础服务
+  - 国家
+  - 地址
+  - 货币
+  - 税率
 
 
 ## 核心功能
