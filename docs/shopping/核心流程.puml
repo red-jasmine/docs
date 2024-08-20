@@ -2,7 +2,6 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
-
 actor 买家
 
 participant 下单核心
@@ -23,12 +22,11 @@ participant 订单
 
 participant 卡密仓库
 
+participant 支付中心
 
 
 
-
-
-
+group 下单流程
 
 买家 --> 下单核心: 商品下单
 
@@ -51,7 +49,6 @@ group 金额计算
 商品 --> 下单核心: 商品价格
 
 
-
 下单核心 -> 营销中心: 获取优惠信息
 
 营销中心 --> 下单核心: 返回优惠信息
@@ -66,17 +63,32 @@ group 运费计算
 物流 --> 下单核心: 返回订单邮费
 end
 
+group 税计算
 
+下单核心 -> 物流 : 计算税额
 
-group 下单事物
+物流 --> 下单核心: 返回税
+end
+
+group 下单
 下单核心-> 订单: 生成订单
-
+订单 --> 下单核心: 订单信息
 下单核心-> 库存: 减库存
-
 下单核心-> 营销中心: 核销优惠券
 end
 
 
+group 支付
+
+下单核心 -> 支付中心: 创建合单支付
+
+支付中心 -> 下单核心: 返回支付单
+
+end group
+
+下单核心-> 买家: 返回支付信息
+
+end group
 
 
 
