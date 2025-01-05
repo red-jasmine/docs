@@ -9,6 +9,11 @@
 import {defineConfig} from 'vitepress'
 // @ts-ignore
 import markdownItTextualUml from 'markdown-it-textual-uml';
+
+import product from  '../docs/products/sidebar.mts'
+import payments from  '../docs/payments/sidebar.mts'
+
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     srcDir: './docs',
@@ -37,20 +42,8 @@ export default defineConfig({
             {
                 text: '功能',
                 items: [
-                    {
-                        text: '商品',
-                        link: '/products',
-                        items: [
-                            {text: '类目', link: '/products/category/'},
-                            {text: '品牌', link: '/products/brands/'},
-                            {text: '属性', link: '/products/property/'},
-                            {text: '商品', link: '/products/product/'},
-                            {text: '库存', link: '/products/stock/'},
-                            {text: '系列', link: '/products/series/'},
-                            {text: '卖家分类', link: '/products/seller-category/'},
-                            {text: '评价', link: '/products/comment/'},
-                        ]
-                    },
+                    product,
+                    payments,
                     {
                         text: '订单', link: '/orders/',
                         items: [
@@ -58,7 +51,6 @@ export default defineConfig({
                             {text: '售后', link: '/orders/refund/'},
                         ]
                     },
-                    {text: '支付', link: '/payment'},
                     {text: '用户', link: '/user'},
                     {text: '地址', link: '/address'},
                     {
