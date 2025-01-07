@@ -1,0 +1,14 @@
+:root {
+    --vp-layout-max-width: 1680px;
+    .VPDoc.has-aside .content-container{
+        max-width: 100%;
+    }
+    img[alt*="uml"] {
+        min-width: 80%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
