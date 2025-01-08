@@ -61,7 +61,7 @@ end
 
 package "交易" {
 
-class 交易单 <<Entity>> {
+class 交易单  <<Entity>> {
 - 交易号
 - 金额
 - 状态
