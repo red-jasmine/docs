@@ -13,7 +13,19 @@ outline: deep
 
 
 ```plantuml
-<!--@include: ./domain.puml-->
+@startuml
+
+package  商品领域{
+
+    class SKU{
+
+    }
+    class 商品基本{
+
+    }
+}
+@enduml
+
 ```
 
 

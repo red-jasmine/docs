@@ -2,7 +2,7 @@
  * @Author: liushoukun liushoukun66@gmail.com
  * @Date: 2023-12-25 23:08:04
  * @LastEditors: liushoukun liushoukun66@gmail.com
- * @LastEditTime: 2024-05-18 15:45:29
+ * @LastEditTime: 2025-01-08 11:25:23
  * @FilePath: \docs\.vitepress\config.mts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,8 +14,22 @@ import product from  '../docs/products/sidebar.mts'
 import payments from  '../docs/payments/sidebar.mts'
 
 
+import { withSidebar } from 'vitepress-sidebar';
+
+const vitePressSidebarOptions = {
+    // VitePress Sidebar's options here...
+    documentRootPath: '/docs',
+    collapsed: false,
+    capitalizeFirst: true,
+    useTitleFromFileHeading:true,
+    useTitleFromFrontmatter:true,
+    useFolderTitleFromIndexFile:true,
+    useFolderLinkFromIndexFile:true,
+    sortMenusByFrontmatterOrder:true,
+};
+
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default defineConfig(withSidebar({
     srcDir: './docs',
     title: "RedJasmine Docs",
     description: "A VitePress Site",
@@ -39,35 +53,7 @@ export default defineConfig({
 
                 ]
             },
-            {
-                text: '功能',
-                items: [
-                    product,
-                    payments,
-                    {
-                        text: '订单', link: '/orders/',
-                        items: [
-                            {text: '订单', link: '/orders/order/'},
-                            {text: '售后', link: '/orders/refund/'},
-                        ]
-                    },
-                    {text: '用户', link: '/user'},
-                    {text: '地址', link: '/address'},
-                    {
-                        text: '购买', link: '/shopping/',
-                        items: [
-                            {text: '订单', link: '/shopping/'},
-                        ]
-                    },
-                    {text: '客户', link: '/customer'},
-                    {text: '账户', link: '/account'},
-                    {text: '卡密仓库', link: '/card-key'},
-                    {text: '验证码', link: '/captcha'},
-                    {text: '短网址', link: '/short-url'},
-                    {text: '商户', link: '/seller'},
-                    {text: '内容', link: '/content'},
-                ]
-            }
+
         ],
 
         socialLinks: [
@@ -83,4 +69,4 @@ export default defineConfig({
             lazyLoading: true
         }
     }
-})
+},vitePressSidebarOptions))

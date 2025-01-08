@@ -4,7 +4,7 @@
         max-width: 100%;
     }
     img[alt*="uml"] {
-        min-width: 80%;
+        min-width: 50%;
         max-width: 100%;
         height: auto;
         display: block;
