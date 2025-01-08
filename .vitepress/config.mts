@@ -36,6 +36,9 @@ export default defineConfig(withSidebar({
     base: '/docs/',
     appearance: "dark",
     themeConfig: {
+        outline:{
+            label: '本页面'
+        },
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: '首页', link: '/'},
@@ -68,5 +71,8 @@ export default defineConfig(withSidebar({
             // image lazy loading is disabled by default
             lazyLoading: true
         }
+    },
+    search: {
+        provider: 'local'
     }
 },vitePressSidebarOptions))

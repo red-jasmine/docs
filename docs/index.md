@@ -16,6 +16,7 @@ hero:
 
 features:
   - title: 商品
+    icon: 🛠️
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: 订单
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -23,3 +24,6 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
   - title: 卡密
 ---
+
+
+
